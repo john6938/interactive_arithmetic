@@ -12,7 +12,15 @@ const blockHints = [
   "Hint 4: Multiply the numbers at each row and column intersection to fill in the grid.",
   "Final Hint: Sum up all the products to get the result."
 ];
-
+const fujisawaHints = [
+  "Hint 1: Break the numbers into tens and ones.",
+  "Hint 2: Draw diagonal lines correspondingly to the tens and ones of the first number.",
+  "Hint 3: Draw diagonal lines correspondingly to the tens and ones of the second number, but this time, let's draw it over the lines that we've already drawn.",
+  "Hint 4: Count the number of tens intersections and multiply them by 100.",
+  "Hint 5: Count the number of intersections between tens and ones and multiply them by 10.",
+  "Hint 6: Count the number of ones intersections and multiply them by 1.",
+  "Final Hint: Sum up all the products to get the result."
+];
 // Initialize hints to regularHints as default
 let hints = [...regularHints];
 
@@ -30,8 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const method = document.querySelector('input[name="method"]:checked').value;
       if (method === "regular") {
         hints = [...regularHints];
-      } else {
+      } else if (method === "block"){
         hints = [...blockHints];
+      } else if (method === "fujisawa"){
+        hints = [...fujisawaHints];
       }
     });
   });
@@ -51,15 +61,22 @@ function prepareCalculation() {
     alert("Please enter two two-digit numbers.");
     return false;
   }
-
-  if (method === "regular") {
-    // Regular method
-    prepareRegularCalculation(num1, num2);
-    hints = regularHints;
-  } else {
-    // Block method
-    prepareBlockCalculation(num1, num2);
-    hints = blockHints;
+  switch (method) {
+    case "regular":
+      // Regular method
+      prepareRegularCalculation(num1, num2);
+      hints = regularHints;
+      break;
+    case "block":
+      // Block method
+      prepareBlockCalculation(num1, num2);
+      hints = blockHints;
+      break;
+    case "fujisawa":
+      // Fujisawa - Japanese method
+      prepareFujisawaCalculation(num1, num2);
+      hints = fujisawaHints;
+      break;
   }
   return true;
 }
@@ -116,6 +133,26 @@ function prepareBlockCalculation(num1, num2) {
     `Step 4: Multiply ones of both numbers: ${ones1} * ${ones2} = ${block4}`,
     `Final Step: Add all the products together: ${block1} + ${block2} + ${block3} + ${block4} = ${finalResult}`
   ];
+}
+
+function prepareFujisawaCalculation(num1, num2) {
+  const tens1 = Math.floor(num1/10);
+  const ones1 = num1%10;
+  const tens2 = Math.floor(num2/10);
+  const ones2 = num2%10;
+  const res = num1 * num2;
+  const group2 = ((tens1 * ones2) + (tens2 * ones1))*10;
+  const group1 = (tens1 * tens2) * 100;
+  const group3 = (ones1 * ones2);
+
+  steps = [
+    `Step 1: Draw ${tens1} line segments, and a little further away, draw ${ones1} line segments correspondingly to the first number.`,
+    `Step 2: Draw ${tens2} line segments, and a little further away, draw ${ones2} line segments over the drawn line segments correspondingly to the second number.`,
+    `Step 3: Count the intersections amongst the tens groups and multiply it by 100, we get ${group1}.`,
+    `Step 4: Count the intersections amongst the tens and ones groups and multiply it by 10, we get ${group2}.`,
+    `Step 5: Count the intersections amongst the ones groups and multiply it by 1, we get ${group3}.`,
+    `Step 6: Sum up all the products calculated: ${group1} + ${group2} + ${group3} = ${res}.`
+  ]
 }
 
 function showStep() {
