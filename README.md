@@ -12,3 +12,9 @@ TODO:<br />
 
 ''npx p5-server server''<br />
 localhost:3000
+
+#   update 1/27/24
+p5 failing due to limited server stability -> switched to vitejs. <br />
+still need to work on optimizing functionality of canvas closing, resizing. <br />
+'''npm i'''
+'''npm run dev''' for local hosting
