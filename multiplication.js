@@ -193,4 +193,3 @@ function showHint() {
     hintIndex = 0;
   }
 }
-
