@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Japanese Multiplication</title>
+  <!-- Import the p5.js library from node_modules -->
+  <script src="node_modules/p5/lib/p5.min.js"></script>
+  <!-- Import sketch file -->
+  <script src="sketch_japanese_method.js"></script>
+  <script>
+    // Get parameters from the URL
+    function getURLParams() {
+      var params = {};
+      window.location.search.substring(1).split('&').forEach(function (pair) {
+        var keyValue = pair.split('=');
+        params[keyValue[0]] = keyValue[1];
+      });
+      return params;
+    }
+
+    // Canvas drawing code goes here
+
+    // Call setup function after the page loads
+    window.onload = function() {
+      // Get the parameters from the URL
+      var params = getURLParams();
+      
+      // Call drawLines with the retrieved numbers
+      drawLines(params.num1, params.num2);
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>
