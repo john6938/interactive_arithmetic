@@ -1,17 +1,11 @@
-var gap = 25; 
-var groupGap = 100; // Gap between groups of lines 
+var gap = 10; 
+var groupGap = 70; // Gap between groups of lines 
 var colors = { 
   tens: [0, 0, 255], // Blue for the tens digit 
   units: [255, 0, 0] // Red for the units digit 
 };
 
 function setup() { 
-  createCanvas(1920, 1080); 
-  background(0); 
-  // drawLines(77, 77);
-  
-  textSize(32);
-  fill(255); // White color
 }
 
 function getColor(digit) { 
@@ -26,7 +20,7 @@ function drawLines(num1, num2) {
 
   const startY = 500;
 
-  const lineLength = 600; // Set this to the desired length of the lines
+  const lineLength = 400; // Set this to the desired length of the lines
   const endX = startX + lineLength;
   const endY = startY + lineLength;
 
@@ -106,9 +100,6 @@ function drawLines(num1, num2) {
   var product = intersectionCounts.tens * 100 + intersectionCounts.units * 1 + intersectionCounts.mixed * 10;
   textSize(32);
   fill(255); // White color
-  var tensProduct = intersectionCounts.tens * 100;
-  var unitsProduct = intersectionCounts.units * 1;
-  var mixedProduct = intersectionCounts.mixed * 10;
 
   var detailedCalculation = `${intersectionCounts.tens} * 100 + ${intersectionCounts.mixed} * 10 + ${intersectionCounts.units} * 1 = ${product}`;
   text(num1 + " * " + num2 + " = " + detailedCalculation, 10, 50); // Display the product at position (10, 50)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <head>
 <title>John Blake Arithmetic</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +11,12 @@
 <link rel="stylesheet" type="text/css" href="jb2020.css">
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  </head>
 
 <body>
   <div id="visualizationCanvas"></div> 
+
+
 <!-- Navbar -->
   <div class="w3-bar w3-black w3-large">
 <!-- Put logo in line below -->
@@ -163,8 +167,8 @@
 <!-- END MAIN -->
 </div>
 <script src="sketch_japanese_method.js"></script>
-<script src="sketch_regular_method.js"></script>
 <script src="multiplication.js"></script>
+<script src="sketch_regular_method.js"></script>
 <script src="node_modules/p5/lib/p5.min.js"></script>
 <script>
   function drawVisualization() {
@@ -183,15 +187,17 @@
       fill(255); // White color
     }
     //Check if Regular Method is chosen
-    else if (method == 'regular') {
-      var canvas = creatCanvas(1000, 500);
+    else if (method === 'regular') {
+      var canvas = createCanvas(1000, 500);
       canvas.parent('visualizationCanvas');
-      drawRegularVisualization(num1,num2);
+      drawRegularVisualization(num1, num2);
     }
-    else if(method == 'block') {
-      alert('Not yet implemented');
+    else if (method === 'block') {
+      alert('This method is not yet implemented');
     }
-    else alert('Something went wrong');
+    else {
+      alert('Something went wrong');
+    }
   }
 </script>
 
