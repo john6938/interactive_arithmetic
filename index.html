@@ -163,6 +163,7 @@
 <!-- END MAIN -->
 </div>
 <script src="sketch_japanese_method.js"></script>
+<script src="sketch_regular_method.js"></script>
 <script src="multiplication.js"></script>
 <script src="node_modules/p5/lib/p5.min.js"></script>
 <script>
@@ -181,9 +182,16 @@
       textSize(16);
       fill(255); // White color
     }
-    else {
-      alert('haha');
+    //Check if Regular Method is chosen
+    else if (method == 'regular') {
+      var canvas = creatCanvas(1000, 500);
+      canvas.parent('visualizationCanvas');
+      drawRegularVisualization(num1,num2);
     }
+    else if(method == 'block') {
+      alert('Not yet implemented');
+    }
+    else alert('Something went wrong');
   }
 </script>
 
