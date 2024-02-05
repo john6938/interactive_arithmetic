@@ -1,5 +1,5 @@
-var gap = 10; 
-var groupGap = 70; // Gap between groups of lines 
+var gap = 5; 
+var groupGap = 50; // Gap between groups of lines 
 var colors = { 
   tens: [0, 0, 255], // Blue for the tens digit 
   units: [255, 0, 0] // Red for the units digit 
@@ -16,11 +16,11 @@ function drawLines(num1, num2) {
   const linesA = num1.toString().split('').map(Number); 
   const linesB = num2.toString().split('').map(Number);
 
-  const startX = 500;
+  const startX = 300;
 
-  const startY = 500;
+  const startY = 300;
 
-  const lineLength = 400; // Set this to the desired length of the lines
+  const lineLength = 200; // Set this to the desired length of the lines
   const endX = startX + lineLength;
   const endY = startY + lineLength;
 
@@ -98,12 +98,11 @@ function drawLines(num1, num2) {
   pop();
 
   var product = intersectionCounts.tens * 100 + intersectionCounts.units * 1 + intersectionCounts.mixed * 10;
-  textSize(32);
+  textSize(16);
   fill(255); // White color
 
   var detailedCalculation = `${intersectionCounts.tens} * 100 + ${intersectionCounts.mixed} * 10 + ${intersectionCounts.units} * 1 = ${product}`;
   text(num1 + " * " + num2 + " = " + detailedCalculation, 10, 50); // Display the product at position (10, 50)
-  // text(detailedCalculation, 10, 80); // Display the detailed calculation at position (10, 80)
 }
 
 function getIntersection(lineA, lineB) {
