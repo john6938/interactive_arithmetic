@@ -19,3 +19,9 @@ still need to work on optimizing functionality of canvas closing, resizing. <br 
 nodejs lts required <br />
 ```npm i``` <br />
 ```npm run dev``` for local hosting
+
+#   update 2/5/24
+resizing canvas for visualization <br />
+add X button for closing canvas of visualization modal <br />
+mannually set up port for ping optimization if desired <br />
+```npm run dev -- -p "port_number"```
