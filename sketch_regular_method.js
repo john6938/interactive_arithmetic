@@ -10,7 +10,8 @@ function drawRegularVisualization(num1, num2) {
   // Set up the drawing environment
   textSize(32); // Adjust text size as needed
   textAlign(RIGHT, CENTER); // Align text to the right
-  fill(0);
+  background(0); // Set the background to white
+  fill(255);
 
   // Starting position for drawing the numbers
   let x = width / 2 + 100; // Set x to the middle of the canvas, adjust as needed
@@ -37,7 +38,7 @@ function drawRegularVisualization(num1, num2) {
   }
 
   // Draw the separator line before the final result
-  stroke(0);
+  stroke(255);
   line(x - 100, y, x, y); // Line length and position may need to be adjusted
   y += stepY / 2; // Slightly more space before the final result
 

@@ -25,3 +25,11 @@ resizing canvas for visualization <br />
 add X button for closing canvas of visualization modal <br />
 mannually set up port for ping optimization if desired <br />
 ```npm run dev -- -p "port_number"```
+
+#   update 2/7/24
+optimizing canvas for japanese method for more user-friendly visualization <br />
+resizing and fixing bugs for regular method visualization <br />
+still need to work on aligning products in regular method (may need to fix manually since fixing by code does not work)<br />
+still need to change color for units and tens in visualization for a more user-friendly approach <br />
+install latest vitejs version to avoid bugs <br />
+```npm i -g vite``` for global installation

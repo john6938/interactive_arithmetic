@@ -1,4 +1,4 @@
-var gap = 5; 
+var gap = 9; 
 var groupGap = 50; // Gap between groups of lines 
 var colors = { 
   tens: [0, 0, 255], // Blue for the tens digit 
@@ -98,11 +98,11 @@ function drawLines(num1, num2) {
   pop();
 
   var product = intersectionCounts.tens * 100 + intersectionCounts.units * 1 + intersectionCounts.mixed * 10;
-  textSize(16);
+  textSize(20);
   fill(255); // White color
 
-  var detailedCalculation = `${intersectionCounts.tens} * 100 + ${intersectionCounts.mixed} * 10 + ${intersectionCounts.units} * 1 = ${product}`;
-  text(num1 + " * " + num2 + " = " + detailedCalculation, 10, 50); // Display the product at position (10, 50)
+  var detailedCalculation = `(${intersectionCounts.tens} x 100) + (${intersectionCounts.mixed} x 10) + (${intersectionCounts.units} x 1) = ${product}`;
+  text(num1 + " x " + num2 + " = " + detailedCalculation, 10, 50); // Display the product at position (10, 50)
 }
 
 function getIntersection(lineA, lineB) {
