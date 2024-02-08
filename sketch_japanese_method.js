@@ -1,5 +1,5 @@
 var gap = 9; 
-var groupGap = 50; // Gap between groups of lines 
+var groupGap = 100; // Gap between groups of lines 
 var colors = { 
   tens: [0, 0, 255], // Blue for the tens digit 
   units: [255, 0, 0] // Red for the units digit 
@@ -16,9 +16,8 @@ function drawLines(num1, num2) {
   const linesA = num1.toString().split('').map(Number); 
   const linesB = num2.toString().split('').map(Number);
 
-  const startX = 300;
-
-  const startY = 300;
+  const startX = 200;
+  const startY = 200;
 
   const lineLength = 200; // Set this to the desired length of the lines
   const endX = startX + lineLength;
@@ -98,11 +97,47 @@ function drawLines(num1, num2) {
   pop();
 
   var product = intersectionCounts.tens * 100 + intersectionCounts.units * 1 + intersectionCounts.mixed * 10;
-  textSize(20);
-  fill(255); // White color
 
-  var detailedCalculation = `(${intersectionCounts.tens} x 100) + (${intersectionCounts.mixed} x 10) + (${intersectionCounts.units} x 1) = ${product}`;
-  text(num1 + " x " + num2 + " = " + detailedCalculation, 10, 50); // Display the product at position (10, 50)
+  textSize(20);
+
+  // Split num1 and num2 into tens and units digits
+  let num1Tens = Math.floor(num1 / 10);
+  let num1Units = num1 % 10;
+  let num2Tens = Math.floor(num2 / 10);
+  let num2Units = num2 % 10;
+
+  var xPosition = 10;
+  const yPosition = 50;
+
+  // Draw num1 tens digit in blue
+  fill(0, 0, 255); // Blue 
+  text(num1Tens, xPosition, yPosition);
+  xPosition += textWidth(num1Tens.toString());
+
+  // Draw num1 units digit in red
+  fill(255, 0, 0); // Red 
+  text(num1Units, xPosition, yPosition);
+  xPosition += textWidth(num1Units.toString());
+
+  // Draw multiplication symbol in white
+  fill(255); // Whites
+  text(' x ', xPosition, yPosition);
+  xPosition += textWidth(' x ');
+
+  // Draw num2 tens digit in blue
+  fill(0, 0, 255); // Blue 
+  text(num2Tens, xPosition, yPosition);
+  xPosition += textWidth(num2Tens.toString());
+
+ // Draw num2 units digit in red
+  fill(255, 0, 0); // Red 
+ text(num2Units, xPosition, yPosition);
+ xPosition += textWidth(num2Units.toString());
+
+  // Draw equals symbol and detailed calculation in white
+  fill(255); // White
+  var detailedCalculation = ` = (${intersectionCounts.tens} x 100) + (${intersectionCounts.mixed} x 10) + (${intersectionCounts.units} x 1) = ${product}`;
+  text(detailedCalculation, xPosition, yPosition);
 }
 
 function getIntersection(lineA, lineB) {
