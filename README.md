@@ -33,3 +33,7 @@ still need to work on aligning products in regular method (may need to fix manua
 still need to change color for units and tens in visualization for a more user-friendly approach <br />
 install latest vitejs version to avoid bugs <br />
 ```npm i -g vite``` for global installation
+
+#   update 2/7/24
+done with japanese method visualization. <br />
+still need to work on remainders positioning of regular method. <br />
