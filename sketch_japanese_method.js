@@ -110,33 +110,33 @@ function drawLines(num1, num2) {
   const yPosition = 50;
 
   // Draw num1 tens digit in blue
-  fill(0, 0, 255); // Blue 
+  fill(0, 0, 255); // Blue color
   text(num1Tens, xPosition, yPosition);
   xPosition += textWidth(num1Tens.toString());
 
   // Draw num1 units digit in red
-  fill(255, 0, 0); // Red 
+  fill(255, 0, 0); // Red color
   text(num1Units, xPosition, yPosition);
   xPosition += textWidth(num1Units.toString());
 
   // Draw multiplication symbol in white
-  fill(255); // Whites
-  text(' x ', xPosition, yPosition);
-  xPosition += textWidth(' x ');
+  fill(255, 255, 255); // White color
+  text(' * ', xPosition, yPosition);
+  xPosition += textWidth(' * ');
 
   // Draw num2 tens digit in blue
-  fill(0, 0, 255); // Blue 
+  fill(0, 0, 255); // Blue color
   text(num2Tens, xPosition, yPosition);
   xPosition += textWidth(num2Tens.toString());
 
- // Draw num2 units digit in red
-  fill(255, 0, 0); // Red 
- text(num2Units, xPosition, yPosition);
- xPosition += textWidth(num2Units.toString());
+  // Draw num2 units digit in red
+  fill(255, 0, 0); // Red color
+  text(num2Units, xPosition, yPosition);
+  xPosition += textWidth(num2Units.toString());
 
   // Draw equals symbol and detailed calculation in white
-  fill(255); // White
-  var detailedCalculation = ` = (${intersectionCounts.tens} x 100) + (${intersectionCounts.mixed} x 10) + (${intersectionCounts.units} x 1) = ${product}`;
+  fill(255); // White color
+  var detailedCalculation = ` = ${intersectionCounts.tens} * 100 + ${intersectionCounts.mixed} * 10 + ${intersectionCounts.units} * 1 = ${product}`;
   text(detailedCalculation, xPosition, yPosition);
 }
 

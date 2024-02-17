@@ -172,6 +172,7 @@
 <!-- END MAIN -->
       <script src="sketch_japanese_method.js"></script>
       <script src="multiplication.js"></script>
+      <script src="sketch_grid_method.js"></script>
       <script src="sketch_regular_method.js"></script>
       <script src="node_modules/p5/lib/p5.min.js"></script>
       <script>
@@ -209,8 +210,14 @@
             fill(255);
           }
           else if (method === 'block') {
-            alert('This method is not yet implemented');
-            return;
+            canvasWidth = 700;
+            canvasHeight = 700;
+            
+            var canvas = createCanvas(canvasWidth, canvasHeight);
+            canvas.parent('visualizationCanvas');
+            drawGridMethod(num1, num2);
+            textSize(16);
+            fill(255);
           }
           else {
             alert('Something wrong');

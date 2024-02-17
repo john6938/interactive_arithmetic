@@ -37,3 +37,7 @@ install latest vitejs version to avoid bugs <br />
 #   update 2/7/24
 done with japanese method visualization. <br />
 still need to work on remainders positioning of regular method. <br />
+
+#   update 2/17/24
+adding grid method visualization. <br />
+still need to work on remainders positioning of regular method. <br />
