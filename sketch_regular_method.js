@@ -16,13 +16,13 @@ function drawRegularVisualization(num1, num2) {
   // Starting position for drawing the numbers
   let x = width / 2 + 100; // Set x to the middle of the canvas, adjust as needed
   let y = 60; // Starting Y position
-  let stepY = 64; // Vertical spacing between lines
+  let stepY = 50; // Vertical spacing between lines
 
   // Draw the first and second numbers
   text(num1, x, y);
   y += stepY;
   text('× ' + num2, x, y);
-  y += stepY * 3; // Slightly more space before starting the multiplication steps
+  y += stepY * 1.5; // Slightly more space before starting the multiplication steps
 
   // Drawing the multiplication steps
   let partials = [];

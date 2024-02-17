@@ -57,7 +57,7 @@ function prepareCalculation() {
   const num2 = parseInt(document.getElementById("num2").value);
   const method = document.querySelector('input[name="method"]:checked').value;
 
-  if (isNaN(num1) || isNaN(num2) || num1 < 10 || num1 > 99 || num2 < 10 || num2 > 99) {
+  if (isNaN(num1) || isNaN(num2) || num1 > 99 || num2 > 99) {
     alert("Please enter two two-digit numbers.");
     return false;
   }
@@ -88,7 +88,7 @@ function prepareRegularCalculation(num1, num2) {
     const num1 = parseInt(document.getElementById("num1").value);
     const num2 = parseInt(document.getElementById("num2").value);
     
-    if (isNaN(num1) || isNaN(num2) || num1 < 10 || num1 > 99 || num2 < 10 || num2 > 99) {
+    if (isNaN(num1) || isNaN(num2) || num1 > 99 || num2 > 99) {
       alert("Please enter two two-digit numbers.");
       return;
     }
