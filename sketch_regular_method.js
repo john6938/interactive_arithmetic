@@ -22,7 +22,7 @@ function drawRegularVisualization(num1, num2) {
   text(num1, x, y);
   y += stepY;
   text('× ' + num2, x, y);
-  y += stepY * 1.5; // Slightly more space before starting the multiplication steps
+  y += stepY * 3; // Slightly more space before starting the multiplication steps
 
   // Drawing the multiplication steps
   let partials = [];

@@ -122,7 +122,20 @@
   <label for="num1">First Number:</label>
   <input type="number" id="num1" min="10" max="99" value="99">
   <label for="num2">Second Number:</label>
-  <input type="number" id="num2" min="10" max="99" value="99">
+  <input type="number" id="num2" min="10" max="99" value="99"> 
+  <button type="button" onclick="genNum()">Random Numbers</button>
+  <script>
+    function genNum(){
+      const num1Inp = document.getElementById("num1");
+      const num2Inp = document.getElementById("num2");
+
+      const num1 = Math.floor(Math.random() * 100) + 1;
+      const num2 = Math.floor(Math.random() * 100) + 1;
+
+      num1Inp.value = num1;
+      num2Inp.value = num2;
+    }
+  </script>
   <br>
   <br>
   <button type="button" onclick="showHint()">Show Hint</button>
@@ -171,6 +184,7 @@
 
 <!-- END MAIN -->
       <script src="sketch_japanese_method.js"></script>
+      <!-- <script src="generate_random_numbers.js"></script> -->
       <script src="multiplication.js"></script>
       <script src="sketch_grid_method.js"></script>
       <script src="sketch_regular_method.js"></script>
