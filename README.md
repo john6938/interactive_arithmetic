@@ -41,3 +41,7 @@ still need to work on remainders positioning of regular method. <br />
 #   update 2/17/24
 adding grid method visualization. <br />
 still need to work on remainders positioning of regular method. <br />
+
+#   update 2/18/24
+done with grid method visualization. <br />
+still need to work on remainders positioning of regular method. <br />
