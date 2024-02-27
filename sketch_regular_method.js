@@ -1,8 +1,3 @@
-function setup() {
-  createCanvas(400, 400); // Set the size of the canvas as needed
-  drawRegularVisualization('23', '45');
-}
-
 function drawRegularVisualization(num1, num2) {
   clear(); // Clear the canvas for redrawing
   background(0); // Set the background to black
@@ -56,7 +51,13 @@ function drawRegularVisualization(num1, num2) {
   // Draw the partial results and their carries
   for (let i = 0; i < partialResults.length; i++) {
     let result = partialResults[i];
-    let resultXOffset = xOffset/2 + boxSize * (num1.length - result.replace(/^0+/, '').length + 1);
+    let resultXOffset = xOffset + boxSize * (num1.length - result.length + 1);
+
+    // Shift the second partial result one column to the left
+    if (i === 1) {
+      resultXOffset -= boxSize;
+    }
+
     let yPosition = yOffset + boxSize * (2 + i);
 
     // Draw the partial result
@@ -64,16 +65,20 @@ function drawRegularVisualization(num1, num2) {
       text(result[j], resultXOffset + boxSize * j, yPosition);
     }
 
-    // // Draw the carries above the partial result
-    // textSize(14); // Smaller size for the carry numbers
-    // let carryYPosition = (yPosition - 1) - boxSize / 2 ; // Position the carry halfway above the current row
-    // let carryXOffset = resultXOffset - 49;
-    // for (let j = 0; j < carries[i].length; j++) {
-    //   if (carries[i][j] > 0) {
-    //     let carryXPosition = carryXOffset + boxSize * (j - (carries[i].length - result.length));
-    //     text(carries[i][j], carryXPosition, carryYPosition);
-    //   }
-    // }
+    // Draw the carries above the partial result
+    textSize(16); // Smaller size for the carry numbers
+    let carryYPosition = yPosition - boxSize / 2; // Position the carry halfway above the current row
+
+    for (let j = 0; j < carries[i].length; j++) {
+      let carryXPosition = resultXOffset + boxSize * (j - (carries[i].length - result.length)) - 48;
+
+      // Do not draw the leftmost carry for the first partial result
+      if (i === 0 && j === 0) continue;
+
+      if (carries[i][j] > 0) {
+        text(carries[i][j], carryXPosition, carryYPosition);
+      }
+    }
     textSize(32); // Reset the text size for numbers
   }
 
