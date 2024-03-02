@@ -19,6 +19,9 @@ function drawRegularVisualization(num1, num2) {
     text(num2[i], xOffset + boxSize * (i + 1), yOffset + boxSize);
   }
 
+  stroke(255);
+  line(180, 330, 400, 330);
+
   // Calculate the partial results, carries, and their positions
   let carries = [];
   let partialResults = [];
@@ -58,7 +61,7 @@ function drawRegularVisualization(num1, num2) {
       resultXOffset -= boxSize;
     }
 
-    let yPosition = yOffset + boxSize * (2 + i);
+    let yPosition = yOffset + boxSize * (2 + i) + 50;
 
     // Draw the partial result
     for (let j = 0; j < result.length; j++) {
@@ -82,10 +85,13 @@ function drawRegularVisualization(num1, num2) {
     textSize(32); // Reset the text size for numbers
   }
 
+  stroke(255);
+  line(180, 480, 400, 480);
+
   // Calculate and display the final result
   let finalResult = (parseInt(num1) * parseInt(num2)).toString();
   let finalXOffset = xOffset + boxSize * (num1.length + 1 - finalResult.length);
-  let finalYPosition = yOffset + boxSize * (2 + num2.length);
+  let finalYPosition = yOffset + boxSize * (2 + num2.length) + 100;
   for (let i = 0; i < finalResult.length; i++) {
     text(finalResult[i], finalXOffset + boxSize * i, finalYPosition);
   }

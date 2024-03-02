@@ -29,6 +29,9 @@ function drawLines(num1, num2) {
   push();
   translate(width / 2, height / 2); 
   rotate(PI / 4); 
+  scale(1, -1);
+  
+
   translate(-width / 2, -height / 2);
 
   var linesAArray = [];
