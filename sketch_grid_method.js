@@ -1,3 +1,7 @@
+function setup() {
+    clear();
+}
+
 function drawGridMethod(num1, num2) {
     clear(); // Clear the canvas for redrawing
     background(0); // Set the background to black again

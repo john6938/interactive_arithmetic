@@ -203,6 +203,7 @@
           // Check if the user has chosen the Fujisawa Method
           var method = document.querySelector('input[name="method"]:checked').value;
           if (method === 'fujisawa') {
+            clear();
             canvasWidth = 700;
             canvasHeight = 700;
             // Rest of the Fujisawa method logic
@@ -214,6 +215,7 @@
             fill(255); // White color
           }
           else if (method === 'regular') {
+            clear();
             canvasWidth = 700;
             canvasHeight = 700;
             // Rest of the Regular methoqd logic
@@ -224,6 +226,7 @@
             fill(255);
           }
           else if (method === 'block') {
+            clear();
             canvasWidth = 700;
             canvasHeight = 700;
             
@@ -234,6 +237,7 @@
             fill(255);
           }
           else {
+            clear();
             alert('Something wrong');
             return;
           }
