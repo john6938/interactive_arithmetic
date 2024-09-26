@@ -57,7 +57,7 @@ function prepareCalculation() {
   const num2 = parseInt(document.getElementById("num2").value);
   const method = document.querySelector('input[name="method"]:checked').value;
 
-  if (isNaN(num1) || isNaN(num2) || num1 > 99 || num2 > 99) {
+  if (isNaN(num1) || isNaN(num2) || num1 < 10 || num1 > 99 || num2 < 10 || num2 > 99) {
     alert("Please enter two two-digit numbers.");
     return false;
   }
@@ -88,7 +88,7 @@ function prepareRegularCalculation(num1, num2) {
     const num1 = parseInt(document.getElementById("num1").value);
     const num2 = parseInt(document.getElementById("num2").value);
     
-    if (isNaN(num1) || isNaN(num2) || num1 > 99 || num2 > 99) {
+    if (isNaN(num1) || isNaN(num2) || num1 < 10 || num1 > 99 || num2 < 10 || num2 > 99) {
       alert("Please enter two two-digit numbers.");
       return;
     }
@@ -151,7 +151,7 @@ function prepareFujisawaCalculation(num1, num2) {
     `Step 3: Count the intersections amongst the tens groups and multiply it by 100, we get ${group1}.`,
     `Step 4: Count the intersections amongst the tens and ones groups and multiply it by 10, we get ${group2}.`,
     `Step 5: Count the intersections amongst the ones groups and multiply it by 1, we get ${group3}.`,
-    `Step 6: Sum up all the products calculated: ${group1} + ${group2} + ${group3} = ${res}.`
+    `Final Step: Sum up all the products calculated: ${group1} + ${group2} + ${group3} = ${res}.`
   ]
 }
 
@@ -192,4 +192,8 @@ function showHint() {
     document.getElementById("hints").innerHTML = "";
     hintIndex = 0;
   }
+}
+
+function showVisualization() {
+  
 }
