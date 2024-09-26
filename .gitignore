@@ -24,4 +24,4 @@
 # *.sw?
 
 node_modules
-dist
+distnode_modules
