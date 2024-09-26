@@ -8,7 +8,7 @@ export default defineConfig({
     outDir: '../dist',
     rollupOptions: {
       input: './public/index.html',
-      external: ['./src/multiplication.js', './src/visualization.js', './src/sketch_japanese_method.js', './src/sketch_regular_method.js', './src/sketch_grid_method.js'],
+      external: ['./src/sketch_japanese_method.js', './src/sketch_regular_method.js', './src/sketch_grid_method.js'],
       output: {
         globals: {
           'sketch_japanese_method.js': 'drawLines',
