@@ -194,6 +194,6 @@ function showHint() {
   }
 }
 
-function showVisualization() {
-  
-}
+// Attach to the window object to make them globally accessible
+window.showStep = showStep;
+window.showHint = showHint;

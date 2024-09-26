@@ -1,245 +1,183 @@
 <!DOCTYPE html>
 <html>
   <head>
-<title>John Blake Arithmetic</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../jb2020.css">
-<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>Interactive Arithmetic</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../jb2020.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   </head>
 
-<body>
-    <!-- Visualization Modal -->
-  <div id="visualizationModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="visualizationCanvas"></div>
+  <body>
+      <!-- Visualization Modal -->
+      <div id="visualizationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="visualizationCanvas"></div>
+        </div>
     </div>
-  </div> 
+    
 
+    <!-- Navbar -->
+    <div class="w3-bar w3-black w3-large">
+      <!-- Put logo in line below -->
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="w3-bar-item w3-button w3-theme"><img
+          src="images/logo.png" width="30" alt="logo" height="30">
+      </a>
 
-<!-- Navbar -->
-  <div class="w3-bar w3-black w3-large">
-<!-- Put logo in line below -->
-<a href="index.html" class="w3-bar-item w3-button w3-theme"><img src="images/logo.png" width="30" alt="logo" height="30"><img
-  src="images/logo.png" width="30" alt="logo" height="30">
-</a>
-<!-- Start dropdown menu -->
-     <div class="w3-dropdown-hover">
-      <button class="w3-button w3-hover-yellow">John Blake</button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-1">
-		<a href="profile.html" class="w3-hover-yellow w3-bar-item w3-button">Profile</a>
-		<a href="projects.html" class="w3-hover-orange w3-bar-item w3-button">Projects</a>
-        <a href="lab.html" class="w3-hover-green w3-bar-item w3-button">TNT Lab</a>
-        <a href="philosophy.html" class="w3-hover-blue w3-bar-item w3-button">Philosophy</a>
-        <a href="publications.html" class="w3-hover-purple w3-bar-item w3-button">Publications</a>
-        <a href="presentations.html" class="w3-hover-brown w3-bar-item w3-button">Presentations</a>
-        <a href="funding.html" class="w3-hover-black w3-bar-item w3-button">Grants and funds</a>
-        <a href="teaching_philosophy.html" class="w3-hover-red w3-bar-item w3-button">Teaching philosphy</a>
-    </div>
-    </div>
-   <div class="w3-dropdown-hover">
-      <button class="w3-button w3-hover-orange">Tools</button>
-      <div class="w3-dropdown-content  w3-bar-block w3-card-2">
-        <a href="https://www.jb11.org/pronscaff.html" class="w3-hover-yellow w3-bar-item w3-button">Pronunciation scaffolder</a>
-       <a href="https://www.jb11.org/error_detector.html" class="w3-hover-orange w3-bar-item w3-button">Error detector</a>
-        <a href="https://tense-sense-identifier.herokuapp.com/" class="w3-hover-green w3-bar-item w3-button">Tense identifier</a>
-        <a href="https://codepen.io/john6938/live/ZmaXzX" class="w3-hover-blue w3-bar-item w3-button">Argument analyzer</a>
-        <a href="https://john6938.github.io/move-visualizer-master/" class="w3-hover-purple w3-bar-item w3-button">Move visualizer</a>
-        <a href="https://fv.rt247a.ddns.me/" class="w3-hover-brown w3-bar-item w3-button">Feature visualizer</a>
-    </div>
+      <div class="w3-main w3-theme-l1" style="margin-left:10px">
+        <div class="w3-row w3-padding-64">
+          <div class="w3-twothird w3-container">
+            <h1 class="w3-text-orange">Multiplication</h1>
+            <h3 class="w3-text-orange">Finding the product of two two-digit numbers</h3>
+            <p>This is the sandbox site for an interactive arithmetic tool that helps learners with various arithmetic
+              operations. The first tool helps learners understand the steps in multiple two two-digit numbers. This is
+              via the regular method and the block (grid) method.</p>
+            <form>
+              <input type="radio" id="regular" name="method" value="regular" checked>
+              <label for="regular">Regular Method</label>
+              <br>
+              <input type="radio" id="block" name="method" value="block">
+              <label for="block">Block Method</label>
+              <br>
+              <input type="radio" id="fujisawa" name="method" value="fujisawa">
+              <label for="fujisawa">Fujisawa Method</label>
+              <br>
+              <br>
+              <label for="num1">First Number:</label>
+              <input type="number" id="num1" min="10" max="99" value="23">
+              <label for="num2">Second Number:</label>
+              <input type="number" id="num2" min="10" max="99" value="45">
+              <button type="button" onclick="genNum()">Random Numbers</button>
+              <br>
+              <br>
+              <button type="button" onclick="showHint()">Show Hint</button>
+              <div id="hints"></div>
+              <br>
+              <button type="button" onclick="showStep()">Show Step</button>
+
+              <script>
+                function genNum(){
+                  const num1Inp = document.getElementById("num1");
+                  const num2Inp = document.getElementById("num2");
+            
+                  const num1 = Math.floor(Math.random() * 100) + 1;
+                  const num2 = Math.floor(Math.random() * 100) + 1;
+            
+                  num1Inp.value = num1;
+                  num2Inp.value = num2;
+                }
+              </script>
+
+              
+              <div id="steps"></div>
+              <br>
+              <button type="button" onclick="showVisualization()">Show Visualization</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="w3-row w3-padding-64">
+          <div class="w3-twothird w3-container">
+            <h3 class="w3-text-orange">Video explanations</h3>
+            <p>The following videos show regular, grid and line methods of multiplication.</p>
+            <div>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/PZjIT9CH6bM?si=FTP4QrUCVxJigDI2"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div><br>
+
+            <div>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/7_2fiYzEf8A?si=GXiwOLDKa9ufaR-9"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div><br>
+
+            <div>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/gngvWShRgX4?si=xW4PdoUOiq76ODJn"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
       </div>
-     <div class="w3-dropdown-hover">
-      <button class="w3-button w3-hover-green">Courses</button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-      <a href="https://u-aizu.ac.jp/~jblake/courses.html" class="w3-hover-white w3-bar-item w3-button">Course list</a>
- 		<a href="https://u-aizu.ac.jp/~jblake/course_authorship/authorship_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Authorship analysis</a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_expert/expert_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Expert systems with Python</a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_fields/fields_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Fields of computer science</a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_ethics/ethics_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Information ethics</a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_logic/logic_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Logic and language</a>
-        <a href="https://u-aizu.ac.jp/~jblake/course_patterns/patterns_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Patterns and language</a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_py4nlp/py4nlp_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Python for NLP </a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_tell/tell_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Technology-enhanced language learning</a>
-        <a href="https://u-aizu.ac.jp/~jblake/course_tense/tense_unit_01.html" class="w3-hover-yellow w3-bar-item w3-button"><i class="em em-computer"></i> Visualizing time and tense</a>
- 		<a href="https://u-aizu.ac.jp/~jblake/course_error_free/error_free_unit_01.html" class="w3-hover-orange w3-bar-item w3-button"><i class="em em-writing_hand"></i> Error-free research writing</a>
- 		<a href="https://u-aizu.ac.jp/~jblake/course_reader_friendly/reader_friendly_unit_01.html" class="w3-hover-orange w3-bar-item w3-button"><i class="em em-writing_hand"></i> Reader-friendly writing</a>
-		<a href="https://u-aizu.ac.jp/~jblake/ThesisWriting/Unit01.html" class="w3-hover-orange w3-bar-item w3-button"><i class="em em-writing_hand"></i> Legacy thesis writing</a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_thesis_v2/thesis_v2_unit_01.html" class="w3-hover-orange w3-bar-item w3-button"><i class="em em-writing_hand"></i> Thesis writing</a>
- 		<a href="https://u-aizu.ac.jp/~jblake/course_scientific_abstracts/scientific_abstracts_unit_01.html" class="w3-hover-orange w3-bar-item w3-button"><i class="em em-writing_hand"></i> Writing scientific research abstracts</a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_awareness/awareness_unit_01.html" class="w3-hover-green w3-bar-item w3-button"><img src="https://web-ext.u-aizu.ac.jp/~jblake/images/generic/favicon.png" alt="" width="24" height="24"> Awareness and defense</a>
-		<a href="https://u-aizu.ac.jp/~jblake/course_blitz/blitz_unit_01.html" class="w3-hover-green w3-bar-item w3-button"><img src="https://web-ext.u-aizu.ac.jp/~jblake/images/generic/favicon.png" alt="" width="24" height="24"> Blitz speaking</a>
-        <a href="https://u-aizu.ac.jp/~jblake/course_interview/interview_unit_01.html" class="w3-hover-green w3-bar-item w3-button"><img src="https://web-ext.u-aizu.ac.jp/~jblake/images/generic/favicon.png" alt="" width="24" height="24"> Interview practice</a>
-        <a href="https://u-aizu.ac.jp/~jblake/course_TNT/tnt_unit_01.html" class="w3-hover-green w3-bar-item w3-button"><img src="https://web-ext.u-aizu.ac.jp/~jblake/images/generic/favicon.png" alt="" width="24" height="24"> Professional development</a> </div>
-    </div>
- <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-</div>
 
+      <footer id="myFooter">
+        <div class="w3-container w3-theme-l2 w3-padding-32">
+          <p>"The essence of math is not to make simple things complicated, but to make complicated things simple." <span>- Stan Gudder, Professor of Mathematics </span></p>
+          <p>"Without mathematics, there’s nothing you can do. Everything around you is mathematics. Everything around you is numbers." <span>- Shakuntala Devi, Indian mathematician aka. The human calculator</span></p>
+          <p>"Nature is written in mathematical language." <span>- Galileo Galilei </span></p>
+        </div>
+    
+        <div class="w3-container w3-theme-l1">
+          <p>Copyright John Blake, 2023</p>
+        </div>
+      </footer>
 
-<!--Sidebar -->
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-medium w3-dark-grey w3-animate-left" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
-    <i class="fa fa-remove"></i>
-  </a>
-  <!-- <h4 class="w3-bar-item"><b>Menu</b></h4>  -->
-  <a class="w3-bar-item w3-button w3-hover-black" href="https://www.jb11.org/pronscaff.html">Pronunciation scaffolder</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="https://www.jb11.org/error_detector.html">Error detector</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="https://tense-sense-identifier.herokuapp.com">Tense identifier</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="https://codepen.io/john6938/live/ZmaXzX">Argument analyzer</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="https://john6938.github.io/move-visualizer-master/">Move visualizer</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="https://fv.rt247a.ddns.me/">Feature visualizer</a>
-</nav>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+      <script type="module" src="../src/multiplication.js"></script>
+      <script type="module" src="../src/sketch_japanese_method.js"></script>
+      <script type="module" src="../src/sketch_regular_method.js"></script>
+      <script type="module" src="../src/sketch_grid_method.js"></script>
+      <script type="module" src="../src/visualization.js"></script>
 
+      <script>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
 
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-
-
-
-<div class="w3-main w3-theme-l1" style="margin-left:250px">
-<div class="w3-row w3-padding-64">
-<div class="w3-twothird w3-container">
- <h1 class="w3-text-orange">Multiplication</h1>
-<h3 class="w3-text-orange">Finding the product of two two-digit numbers</h3>
-<p>This is the sandbox site for an interactive arithmetic tool that helps learners with various arithmetic operations. The first tool helps learners understand the steps in multiple two two-digit numbers. This is via the regular method and the block (grid) method.</p>
-<form>
-  <input type="radio" id="regular" name="method" value="regular" checked>
-  <label for="regular">Regular Method</label>
-  <br>
-  <input type="radio" id="block" name="method" value="block">
-  <label for="block">Block Method</label>
-  <br>
-  <input type="radio" id="fujisawa" name="method" value="fujisawa">
-  <label for="fujisawa">Fujisawa Method</label>
-  <br>
-  <br>
-  <label for="num1">First Number:</label>
-  <input type="number" id="num1" min="10" max="99" value="99">
-  <label for="num2">Second Number:</label>
-  <input type="number" id="num2" min="10" max="99" value="99"> 
-  <button type="button" onclick="genNum()">Random Numbers</button>
-  <script>
-    function genNum(){
-      const num1Inp = document.getElementById("num1");
-      const num2Inp = document.getElementById("num2");
-
-      const num1 = Math.floor(Math.random() * 100) + 1;
-      const num2 = Math.floor(Math.random() * 100) + 1;
-
-      num1Inp.value = num1;
-      num2Inp.value = num2;
-    }
-  </script>
-
-
-  <br>
-  <br>
-  <button type="button" onclick="showHint()">Show Hint</button>
-  <div id="hints"></div>
-  <br>
-  <button type="button" onclick="showStep()">Show Step</button>
-  <div id="steps"></div>
-  <br>
-  <button type="button" onclick="showVisualization()">Show Visualization</button>
-</form>
-	
-</div>
-</div>
-
-	<div class="w3-row w3-padding-64">
-  		<div class="w3-twothird w3-container">
-			<h3 class="w3-text-orange">Video explanations</h3>
-			<p>The following videos show regular, grid and line methods of multiplication.</p>
-			<div>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/PZjIT9CH6bM?si=FTP4QrUCVxJigDI2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-			</div><br>
-			
-			<div>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/7_2fiYzEf8A?si=GXiwOLDKa9ufaR-9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-			</div><br>
-			
-			<div>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/gngvWShRgX4?si=xW4PdoUOiq76ODJn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-			</div>
-</div>
-</div>
-
- 
-
-  <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
-      <p>"The essence of math is not to make simple things complicated, but to make complicated things simple." <span>- Stan Gudder, Professor of Mathematics </span></p>
-      <p>"Without mathematics, there’s nothing you can do. Everything around you is mathematics. Everything around you is numbers." <span>- Shakuntala Devi, Indian mathematician aka. The human calculator</span></p>
-      <p>"Nature is written in mathematical language." <span>- Galileo Galilei </span></p>
-    </div>
-
-    <div class="w3-container w3-theme-l1">
-      <p>Copyright John Blake, 2023</p>
-    </div>
-  </footer>
-
-<!-- END MAIN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script type="module" src="../src/sketch_japanese_method.js"></script>
-    <script type="module" src="../src/sketch_regular_method.js"></script>
-    <script type="module" src="../src/sketch_grid_method.js"></script>
-    <script type="module" src="../src/visualization.js"></script>
-    <script>
-      // Get the Sidebar
-      var mySidebar = document.getElementById("mySidebar");
-
-      // Get the DIV with overlay effect
-      var overlayBg = document.getElementById("myOverlay");
-
-      // Toggle between showing and hiding the sidebar, and add overlay effect
-      function w3_open() {
-        if (mySidebar.style.display === 'block') {
-          mySidebar.style.display = 'none';
-          overlayBg.style.display = "none";
-        } else {
-          mySidebar.style.display = 'block';
-          overlayBg.style.display = "block";
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+          if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+            overlayBg.style.display = "none";
+          } else {
+            mySidebar.style.display = 'block';
+            overlayBg.style.display = "block";
+          }
         }
-      }
 
-      // Close the sidebar with the close button
-      function w3_close() {
-        mySidebar.style.display = "none";
-        overlayBg.style.display = "none";
-      }
-
-
-      // Get the Sidebar
-      var mySidebar = document.getElementById("mySidebar");
-
-      // Get the DIV with overlay effect
-      var overlayBg = document.getElementById("myOverlay");
-
-      // Toggle between showing and hiding the sidebar, and add overlay effect
-      function w3_open() {
-        if (mySidebar.style.display === 'block') {
-          mySidebar.style.display = 'none';
+        // Close the sidebar with the close button
+        function w3_close() {
+          mySidebar.style.display = "none";
           overlayBg.style.display = "none";
-        } else {
-          mySidebar.style.display = 'block';
-          overlayBg.style.display = "block";
         }
-      }
 
-      // Close the sidebar with the close button
-      function w3_close() {
-        mySidebar.style.display = "none";
-        overlayBg.style.display = "none";
-      }
-    </script>
-  </div>
 
-</body>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+          if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+            overlayBg.style.display = "none";
+          } else {
+            mySidebar.style.display = 'block';
+            overlayBg.style.display = "block";
+          }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+          mySidebar.style.display = "none";
+          overlayBg.style.display = "none";
+        }
+      </script>
+    </div>
+
+  </body>
 </html>
