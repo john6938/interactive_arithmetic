@@ -187,127 +187,56 @@
   </footer>
 
 <!-- END MAIN -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-      <script>
-        function drawVisualization() {
-          // Clear existing canvas
-          var visualizationContainer = document.getElementById('visualizationCanvas');
-          visualizationContainer.innerHTML = ''; // Removes any existing canvas
-          // Get the values from the input fields
-          var num1 = document.getElementById('num1').value;
-          var num2 = document.getElementById('num2').value;
-      
-          var canvasWidth, canvasHeight;
-      
-          // Check if the user has chosen the Fujisawa Method
-          var method = document.querySelector('input[name="method"]:checked').value;
-          if (method === 'fujisawa') {
-            clear();
-            canvasWidth = 700;
-            canvasHeight = 700;
-            // Rest of the Fujisawa method logic
-            var canvas = createCanvas(canvasWidth, canvasHeight);
-            canvas.parent('visualizationCanvas');
-            background(0); 
-            drawLines(num1, num2);
-            textSize(16);
-            fill(255); // White color
-          }
-          else if (method === 'regular') {
-            clear();
-            canvasWidth = 700;
-            canvasHeight = 700;
-            // Rest of the Regular methoqd logic
-            var canvas = createCanvas(canvasWidth, canvasHeight);
-            canvas.parent('visualizationCanvas');
-            drawRegularVisualization(num1, num2);
-            textSize(16);
-            fill(255);
-          }
-          else if (method === 'block') {
-            clear();
-            canvasWidth = 700;
-            canvasHeight = 700;
-            
-            var canvas = createCanvas(canvasWidth, canvasHeight);
-            canvas.parent('visualizationCanvas');
-            drawGridMethod(num1, num2);
-            textSize(16);
-            fill(255);
-          }
-          else {
-            clear();
-            alert('Something wrong');
-            return;
-          }
-      
-          // Adjust modal size based on canvas
-          var modalContent = document.querySelector('.modal-content');
-          modalContent.style.width = canvasWidth + 'px';
-          modalContent.style.height = canvasHeight + 'px';
-      
-          // Open the modal
-          var modal = document.getElementById('visualizationModal');
-          modal.style.display = "block";
-        }
-      
-        // Close the modal when the user clicks on <span> (x)
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
-          var modal = document.getElementById('visualizationModal');
-          modal.style.display = "none";
-        }
-      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+      // Get the Sidebar
+      var mySidebar = document.getElementById("mySidebar");
 
-      <script>
-        // Get the Sidebar
-        var mySidebar = document.getElementById("mySidebar");
+      // Get the DIV with overlay effect
+      var overlayBg = document.getElementById("myOverlay");
 
-        // Get the DIV with overlay effect
-        var overlayBg = document.getElementById("myOverlay");
-
-        // Toggle between showing and hiding the sidebar, and add overlay effect
-        function w3_open() {
-          if (mySidebar.style.display === 'block') {
-            mySidebar.style.display = 'none';
-            overlayBg.style.display = "none";
-          } else {
-            mySidebar.style.display = 'block';
-            overlayBg.style.display = "block";
-          }
-        }
-
-        // Close the sidebar with the close button
-        function w3_close() {
-          mySidebar.style.display = "none";
+      // Toggle between showing and hiding the sidebar, and add overlay effect
+      function w3_open() {
+        if (mySidebar.style.display === 'block') {
+          mySidebar.style.display = 'none';
           overlayBg.style.display = "none";
+        } else {
+          mySidebar.style.display = 'block';
+          overlayBg.style.display = "block";
         }
+      }
+
+      // Close the sidebar with the close button
+      function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+      }
 
 
-        // Get the Sidebar
-        var mySidebar = document.getElementById("mySidebar");
+      // Get the Sidebar
+      var mySidebar = document.getElementById("mySidebar");
 
-        // Get the DIV with overlay effect
-        var overlayBg = document.getElementById("myOverlay");
+      // Get the DIV with overlay effect
+      var overlayBg = document.getElementById("myOverlay");
 
-        // Toggle between showing and hiding the sidebar, and add overlay effect
-        function w3_open() {
-          if (mySidebar.style.display === 'block') {
-            mySidebar.style.display = 'none';
-            overlayBg.style.display = "none";
-          } else {
-            mySidebar.style.display = 'block';
-            overlayBg.style.display = "block";
-          }
-        }
-
-        // Close the sidebar with the close button
-        function w3_close() {
-          mySidebar.style.display = "none";
+      // Toggle between showing and hiding the sidebar, and add overlay effect
+      function w3_open() {
+        if (mySidebar.style.display === 'block') {
+          mySidebar.style.display = 'none';
           overlayBg.style.display = "none";
+        } else {
+          mySidebar.style.display = 'block';
+          overlayBg.style.display = "block";
         }
-      </script>
-    </div>
+      }
 
-  </body>
+      // Close the sidebar with the close button
+      function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+      }
+    </script>
+  </div>
+
+</body>
 </html>
