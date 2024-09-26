@@ -1,4 +1,4 @@
-import p5 from 'p5';
+import p5 from "p5";
 
 export function drawGridMethod(num1, num2) {
     const sketch = (p) => {
