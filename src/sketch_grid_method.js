@@ -91,6 +91,20 @@ export function drawGridMethod(num1, num2) {
     };
 
     new p5(sketch, document.getElementById('visualizationCanvas')); // Create a new p5 instance
+
+       // Show the modal when visualization is initiated
+       const modal = document.getElementById("visualizationModal");
+       modal.style.display = "block";
+       // Function to close the modal
+       function closeModal() {
+           modal.style.display = "none";
+       }
+       // Event listener to close modal when clicking outside of the canvas
+       window.addEventListener("click", function (event) {
+           if (event.target === modal) {
+               closeModal();
+           }
+       });
 }
 
 function splitIntoTensAndUnits(number) {
