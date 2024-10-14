@@ -13,13 +13,30 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   </head>
 
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 columns */
+      gap: 20px; /* Space between items */
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+    }
+    iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+    }
+  </style>
+
   <body>
-      <!-- Visualization Modal -->
-      <div id="visualizationModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="visualizationCanvas"></div>
-        </div>
+     <!-- Visualization Modal -->
+    <div id="visualizationModal" class="modal" style="display:none;">
+      <div class="modal-content" id="visualizationContent">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="visualizationCanvas"></div>
+      </div>
     </div>
     
 
@@ -27,8 +44,7 @@
     <div class="w3-bar w3-black w3-large">
       <!-- Put logo in line below -->
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="w3-bar-item w3-button w3-theme"><img
-          src="images/logo.png" width="30" alt="logo" height="30">
-      </a>
+          src="images/logo.png" width="30" alt="logo" height="30"></a>
 
       <div class="w3-main w3-theme-l1" style="margin-left:10px">
         <div class="w3-row w3-padding-64">
@@ -40,25 +56,18 @@
               via the regular method and the block (grid) method.</p>
             <form>
               <input type="radio" id="regular" name="method" value="regular" checked>
-              <label for="regular">Regular Method</label>
-              <br>
+              <label for="regular">Regular Method</label><br>
               <input type="radio" id="block" name="method" value="block">
-              <label for="block">Block Method</label>
-              <br>
+              <label for="block">Block Method</label><br>
               <input type="radio" id="fujisawa" name="method" value="fujisawa">
-              <label for="fujisawa">Fujisawa Method</label>
-              <br>
-              <br>
+              <label for="fujisawa">Fujisawa Method</label><br><br>
               <label for="num1">First Number:</label>
               <input type="number" id="num1" min="10" max="99" value="23">
               <label for="num2">Second Number:</label>
               <input type="number" id="num2" min="10" max="99" value="45">
-              <button type="button" onclick="genNum()">Random Numbers</button>
-              <br>
-              <br>
+              <button type="button" onclick="genNum()">Random Numbers</button><br><br>
               <button type="button" onclick="showHint()">Show Hint</button>
-              <div id="hints"></div>
-              <br>
+              <div id="hints"></div><br>
               <button type="button" onclick="showStep()">Show Step</button>
 
               <script>
@@ -85,30 +94,44 @@
         <div class="w3-row w3-padding-64">
           <div class="w3-twothird w3-container">
             <h3 class="w3-text-orange">Video explanations</h3>
-            <p>The following videos show regular, grid and line methods of multiplication.</p>
-            <div>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/PZjIT9CH6bM?si=FTP4QrUCVxJigDI2"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            </div><br>
-
-            <div>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/7_2fiYzEf8A?si=GXiwOLDKa9ufaR-9"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            </div><br>
-
-            <div>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/gngvWShRgX4?si=xW4PdoUOiq76ODJn"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
+            <p>The following videos show regular, grid, and line methods of multiplication.</p>
+            <div class="video-grid">
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/PZjIT9CH6bM?si=FTP4QrUCVxJigDI2" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/7_2fiYzEf8A?si=GXiwOLDKa9ufaR-9" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/gngvWShRgX4?si=xW4PdoUOiq76ODJn" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_LINK_1" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_LINK_2" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_LINK_3" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
 
       <footer id="myFooter">
         <div class="w3-container w3-theme-l2 w3-padding-32">
@@ -118,7 +141,7 @@
         </div>
     
         <div class="w3-container w3-theme-l1">
-          <p>Copyright John Blake, 2023</p>
+          <p>Copyright John Blake, 2024</p>
         </div>
       </footer>
 
