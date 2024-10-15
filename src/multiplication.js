@@ -105,11 +105,11 @@ function prepareRegularCalculation(num1, num2) {
     const finalStep = (step4 * 100) + (step3 * 10) + (step2 * 10) + step1;
 
     steps = [
-      `Step 1: Multiply the ones places: ${ones1} * ${ones2} = ${step1}`,
-      `Step 2: Multiply the tens place of the first number with the ones place of the second number: ${tens1} * ${ones2} = ${step2}`,
-      `Step 3: Multiply the ones place of the first number with the tens place of the second number: ${ones1} * ${tens2} = ${step3}`,
-      `Step 4: Multiply the tens places: ${tens1} * ${tens2} = ${step4}`,
-      `Final Step: Add all the subtotals together: (${step4} * 100) + (${step3} * 10) + (${step2} * 10) + ${step1} = ${finalStep}`
+      `Step 1: Multiply the ones places: ${ones1} × ${ones2} = ${step1}`,
+      `Step 2: Multiply the tens place of the first number with the ones place of the second number: ${tens1} × ${ones2} = ${step2}`,
+      `Step 3: Multiply the ones place of the first number with the tens place of the second number: ${ones1} × ${tens2} = ${step3}`,
+      `Step 4: Multiply the tens places: ${tens1} × ${tens2} = ${step4}`,
+      `Final Step: Add all the subtotals together: (${step4} × 100) + (${step3} × 10) + (${step2} × 10) + ${step1} = ${finalStep}`
     ];
   }
 }
@@ -127,10 +127,10 @@ function prepareBlockCalculation(num1, num2) {
   const finalResult = block1 + block2 + block3 + block4;
 
   steps = [
-    `Step 1: Multiply tens of the first and second numbers: ${tens1} * ${tens2} = ${block1}`,
-    `Step 2: Multiply tens of the first number with ones of the second number: ${tens1} * ${ones2} = ${block2}`,
-    `Step 3: Multiply ones of the first number with tens of the second number: ${ones1} * ${tens2} = ${block3}`,
-    `Step 4: Multiply ones of both numbers: ${ones1} * ${ones2} = ${block4}`,
+    `Step 1: Multiply tens of the first and second numbers: ${tens1} × ${tens2} = ${block1}`,
+    `Step 2: Multiply tens of the first number with ones of the second number: ${tens1} × ${ones2} = ${block2}`,
+    `Step 3: Multiply ones of the first number with tens of the second number: ${ones1} × ${tens2} = ${block3}`,
+    `Step 4: Multiply ones of both numbers: ${ones1} × ${ones2} = ${block4}`,
     `Final Step: Add all the products together: ${block1} + ${block2} + ${block3} + ${block4} = ${finalResult}`
   ];
 }

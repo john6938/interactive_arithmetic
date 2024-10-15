@@ -153,8 +153,8 @@ export function drawLines(num1, num2) {
 
       // Draw multiplication symbol in white
       p.fill(255, 255, 255); // White color
-      p.text(' x ', xPosition, yPosition);
-      xPosition += p.textWidth(' x ');
+      p.text(' × ', xPosition, yPosition);
+      xPosition += p.textWidth(' × ');
 
       // Draw num2 tens digit in blue
       p.fill(0, 0, 255); // Blue color
@@ -168,7 +168,7 @@ export function drawLines(num1, num2) {
 
       // Draw equals symbol and detailed calculation in white
       p.fill(255); // White color
-      let detailedCalculation = ` = ${intersectionCounts.tens} x 100 + ${intersectionCounts.mixed} x 10 + ${intersectionCounts.units} x 1 = ${product}`;
+      let detailedCalculation = ` = ${intersectionCounts.tens} × 100 + ${intersectionCounts.mixed} × 10 + ${intersectionCounts.units} × 1 = ${product}`;
       p.text(detailedCalculation, xPosition, yPosition);
     };
   };
