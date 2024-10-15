@@ -39,11 +39,13 @@ export function drawLines(num1, num2) {
       const linesB = num2.toString().split('').map(Number);
 
       p.background(0);
+      
+      //Shift to left and top
+      const startX = 150;
+      const startY = 150;
 
-      const startX = 200;
-      const startY = 200;
-
-      const lineLength = 200; // Set this to the desired length of the lines
+      //Increase line length
+      const lineLength = 300; // Set this to the desired length of the lines
       const endX = startX + lineLength;
       const endY = startY + lineLength;
 
@@ -58,6 +60,7 @@ export function drawLines(num1, num2) {
       p.translate(-p.width / 2, -p.height / 2);
 
       let linesAArray = [];
+      p.strokeWeight(2);
       p.stroke(getColor('tens'));
       for (let i = 0; i < linesA[0]; i++) {
         let x1 = startX + i * gap;
@@ -171,4 +174,20 @@ export function drawLines(num1, num2) {
   };
 
   new p5(sketch, document.getElementById('visualizationCanvas'));
+
+  //Show modal when visualization is initiated
+  const modal = document.getElementById("visualizationModal");
+  modal.style.display = "block";
+
+  //Close modal
+  function closeModal(){
+    modal.style.display = "none";
+  }
+
+  //add eventlistener to close modal when clicking outside of the canvas
+  window.addEventListener("click", function (event){
+    if (event.target === modal) {
+      closeModal()
+    }
+  });
 }
