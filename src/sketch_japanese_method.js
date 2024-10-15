@@ -143,13 +143,13 @@ export function drawLines(num1, num2) {
 
       // Draw num1 tens digit in blue
       p.fill(0, 0, 255); // Blue color
-      p.text(num1Tens, xPosition, yPosition);
-      xPosition += p.textWidth(num1Tens.toString());
+      p.text(num2Tens, xPosition, yPosition);
+      xPosition += p.textWidth(num2Tens.toString());
 
       // Draw num1 units digit in red
       p.fill(255, 0, 0); // Red color
-      p.text(num1Units, xPosition, yPosition);
-      xPosition += p.textWidth(num1Units.toString());
+      p.text(num2Units, xPosition, yPosition);
+      xPosition += p.textWidth(num2Units.toString());
 
       // Draw multiplication symbol in white
       p.fill(255, 255, 255); // White color
@@ -158,13 +158,13 @@ export function drawLines(num1, num2) {
 
       // Draw num2 tens digit in blue
       p.fill(0, 0, 255); // Blue color
-      p.text(num2Tens, xPosition, yPosition);
-      xPosition += p.textWidth(num2Tens.toString());
+      p.text(num1Tens, xPosition, yPosition);
+      xPosition += p.textWidth(num1Tens.toString());
 
       // Draw num2 units digit in red
       p.fill(255, 0, 0); // Red color
-      p.text(num2Units, xPosition, yPosition);
-      xPosition += p.textWidth(num2Units.toString());
+      p.text(num1Units, xPosition, yPosition);
+      xPosition += p.textWidth(num1Units.toString());
 
       // Draw equals symbol and detailed calculation in white
       p.fill(255); // White color
